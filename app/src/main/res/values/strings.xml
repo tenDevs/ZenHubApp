@@ -1,3 +1,25 @@
 <resources>
-    <string name="app_name">ZenHub App</string>
+    <string name="app_name">ZenHub</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_in_description">Sign in to your ZenHub account</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="dont_have_account">Don\'t have an account</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="welcome_onboard">Welcome Onboard</string>
+    <string name="welcome_description">Let\s help you register your ZenHub account</string>
+    <string name="register">Register</string>
+    <string name="about_zensar">About Zensar</string>
+    <string name="work_shop">Work shop</string>
+    <string name="faqs">FAQ\s</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_internships">Internships</string>
+    <string name="nav_our_apps">Our Apps</string>
+    <string name="nav_forum">Forum</string>
+    <string name="internship_title"></string>
+    <string name="internship_location"></string>
+    <string name="internship_time_posted"></string>
+    <string name="zensar_desc"></string>
+    <string name="post_user_title"></string>
+    <string name="forum_post"></string>
 </resources>
