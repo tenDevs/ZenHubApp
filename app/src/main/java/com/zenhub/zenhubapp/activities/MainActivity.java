@@ -1,8 +1,10 @@
-package com.zenhub.zenhubapp;
+package com.zenhub.zenhubapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.zenhub.zenhubapp.R;
 
 public class MainActivity extends AppCompatActivity {
 
