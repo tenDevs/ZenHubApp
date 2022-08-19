@@ -20,8 +20,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        /* Modified by Lunghile on 19 August 2022 */
+
+
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
+        // Replacing the default layout on screen with the Home fragment
         getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, new HomeFragment()).commit();
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
