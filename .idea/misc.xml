@@ -3,11 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Acer/Desktop/Projects/ZenHubApp/app/src/main/res/drawable/gradient_background.xml" value="0.341" />
+        <entry key="..\:/Users/Acer/Desktop/Projects/ZenHubApp/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.342" />
+        <entry key="..\:/Users/Acer/Desktop/Projects/ZenHubApp/app/src/main/res/drawable/ic_baseline_dehaze_24.xml" value="0.342" />
         <entry key="..\:/Users/Acer/Desktop/Projects/ZenHubApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Acer/Desktop/Projects/ZenHubApp/app/src/main/res/layout/fragment_forum.xml" value="0.261650277896537" />
         <entry key="..\:/Users/Acer/Desktop/Projects/ZenHubApp/app/src/main/res/layout/fragment_home.xml" value="0.27575887131252674" />
         <entry key="..\:/Users/Acer/Desktop/Projects/ZenHubApp/app/src/main/res/layout/fragment_internship.xml" value="0.261650277896537" />
         <entry key="..\:/Users/Acer/Desktop/Projects/ZenHubApp/app/src/main/res/layout/fragment_our_apps.xml" value="0.27575887131252674" />
+        <entry key="..\:/Users/Acer/Desktop/Projects/ZenHubApp/app/src/main/res/layout/toolbar.xml" value="0.27575887131252674" />
         <entry key="..\:/Users/Acer/Desktop/Projects/ZenHubApp/app/src/main/res/menu/bottom_navigation.xml" value="0.27575887131252674" />
         <entry key="..\:/Users/Dell-User/AndroidStudioProjects/ZenHubApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
       </map>
