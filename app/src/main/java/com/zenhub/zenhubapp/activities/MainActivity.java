@@ -1,8 +1,10 @@
 package com.zenhub.zenhubapp.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,6 +19,9 @@ import com.zenhub.zenhubapp.fragments.OurAppsFragment;
 
 public class MainActivity extends AppCompatActivity {
 
+    ImageView toolbarUserBtn;
+    ImageView toolbarAlertBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        toolbarUserBtn = findViewById(R.id.toolbar_user);
+        toolbarAlertBtn = findViewById(R.id.toolbar_alert);
 
         // Replacing the default layout on screen with the Home fragment
         getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, new HomeFragment()).commit();
@@ -49,6 +56,21 @@ public class MainActivity extends AppCompatActivity {
                         break;
                 }
                 return true;
+            }
+        });
+
+        toolbarUserBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        toolbarAlertBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // got alerts intent
             }
         });
     }

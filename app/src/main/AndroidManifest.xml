@@ -14,7 +14,7 @@
         android:theme="@style/Theme.ZenHubApp"
         tools:targetApi="31">
         <activity
-            android:name=".AboutZensarActivity"
+            android:name=".activities.ProfileActivity"
             android:exported="false" />
         <activity
             android:name=".activities.MainActivity"
