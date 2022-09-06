@@ -11,9 +11,8 @@ import android.widget.ImageView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.zenhub.zenhubapp.R;
-import com.zenhub.zenhubapp.fragments.HomeFragment;
 
-public class AboutZensarActivity extends AppCompatActivity {
+public class AlertsActivity extends AppCompatActivity {
 
     ImageView toolbarUserBtn;
     ImageView toolbarAlertBtn;
@@ -22,8 +21,7 @@ public class AboutZensarActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about_zensar);
-
+        setContentView(R.layout.activity_alerts);
 
         /* Modified by Lunghile on 19 August 2022 */
 
@@ -41,19 +39,19 @@ public class AboutZensarActivity extends AppCompatActivity {
 
                 switch (item.getItemId()) {
                     case R.id.nav_home:
-                        intent = new Intent(AboutZensarActivity.this, MainActivity.class);
+                        intent = new Intent(AlertsActivity.this, MainActivity.class);
                         startActivity(intent);
                         break;
                     case R.id.nav_Internships:
-                        intent = new Intent(AboutZensarActivity.this, InternshipaActivity.class);
+                        intent = new Intent(AlertsActivity.this, InternshipaActivity.class);
                         startActivity(intent);
                         break;
                     case R.id.nav_our_apps:
-                        intent = new Intent(AboutZensarActivity.this, OurAppsActivity.class);
+                        intent = new Intent(AlertsActivity.this, OurAppsActivity.class);
                         startActivity(intent);
                         break;
                     case R.id.nav_forum:
-                        intent = new Intent(AboutZensarActivity.this, ForumActivity.class);
+                        intent = new Intent(AlertsActivity.this, ForumActivity.class);
                         startActivity(intent);
                         break;
                 }
@@ -61,22 +59,15 @@ public class AboutZensarActivity extends AppCompatActivity {
             }
         });
 
-        toolbarUserBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(AboutZensarActivity.this, ProfileActivity.class);
-                startActivity(intent);
-            }
-        });
-
         toolbarAlertBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // got alerts intent
-                Intent intent = new Intent(AboutZensarActivity.this, AlertsActivity.class);
+                Intent intent = new Intent(AlertsActivity.this, AlertsActivity.class);
                 startActivity(intent);
             }
         });
+
     }
 
     @Override

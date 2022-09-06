@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".activities.ProfileActivity">
 
     <include
@@ -98,10 +99,18 @@
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/toolbar" />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/primary_gray"
+        app:itemIconTint="@color/black"
+        app:itemTextColor="@color/black"
         app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

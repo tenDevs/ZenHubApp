@@ -33,7 +33,7 @@ public class FAQActivity extends AppCompatActivity {
         toolbarAlertBtn = findViewById(R.id.toolbar_alert);
 
         // Replacing the default layout on screen with the Home fragment
-        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, new HomeFragment()).commit();
+//        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, new HomeFragment()).commit();
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
@@ -73,7 +73,15 @@ public class FAQActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // got alerts intent
+                Intent intent = new Intent(FAQActivity.this, AlertsActivity.class);
+                startActivity(intent);
             }
         });
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        overridePendingTransition(0, 0);
     }
 }

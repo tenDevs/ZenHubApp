@@ -72,7 +72,7 @@ public class HomeItemsAdapter extends RecyclerView.Adapter<HomeItemsAdapter.Home
                         context.startActivity(intent);
                         break;
                     case 3:
-                        intent = new Intent(context, AboutZensarActivity.class);
+                        intent = new Intent(context, ContactUsActivity.class);
                         context.startActivity(intent);
                         break;
                 }
