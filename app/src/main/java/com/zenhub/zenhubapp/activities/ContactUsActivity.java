@@ -1,23 +1,19 @@
 package com.zenhub.zenhubapp.activities;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.zenhub.zenhubapp.R;
-import com.zenhub.zenhubapp.fragments.ForumFragment;
 import com.zenhub.zenhubapp.fragments.HomeFragment;
-import com.zenhub.zenhubapp.fragments.InternshipFragment;
-import com.zenhub.zenhubapp.fragments.OurAppsFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class ContactUsActivity extends AppCompatActivity {
 
     ImageView toolbarUserBtn;
     ImageView toolbarAlertBtn;
@@ -26,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_contact_us);
 
         /* Modified by Lunghile on 19 August 2022 */
 
@@ -44,19 +40,19 @@ public class MainActivity extends AppCompatActivity {
 
                 switch (item.getItemId()) {
                     case R.id.nav_home:
-                        intent = new Intent(MainActivity.this, AboutZensarActivity.class);
+                        intent = new Intent(ContactUsActivity.this, MainActivity.class);
                         startActivity(intent);
                         break;
                     case R.id.nav_Internships:
-                        intent = new Intent(MainActivity.this, InternshipaActivity.class);
+                        intent = new Intent(ContactUsActivity.this, InternshipaActivity.class);
                         startActivity(intent);
                         break;
                     case R.id.nav_our_apps:
-                        intent = new Intent(MainActivity.this, OurAppsActivity.class);
+                        intent = new Intent(ContactUsActivity.this, OurAppsActivity.class);
                         startActivity(intent);
                         break;
                     case R.id.nav_forum:
-                        intent = new Intent(MainActivity.this, ForumActivity.class);
+                        intent = new Intent(ContactUsActivity.this, ForumActivity.class);
                         startActivity(intent);
                         break;
                 }
@@ -67,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         toolbarUserBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+                Intent intent = new Intent(ContactUsActivity.this, ProfileActivity.class);
                 startActivity(intent);
             }
         });
