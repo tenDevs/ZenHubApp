@@ -48,7 +48,7 @@ public class ForumActivity extends AppCompatActivity {
                         startActivity(intent);
                         break;
                     case R.id.nav_our_apps:
-                        intent = new Intent(ForumActivity.this, OurAppsActivity.class);
+                        intent = new Intent(ForumActivity.this, OurAppActivity.class);
                         startActivity(intent);
                         break;
                     case R.id.nav_forum:

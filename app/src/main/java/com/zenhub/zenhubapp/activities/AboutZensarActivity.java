@@ -49,7 +49,7 @@ public class AboutZensarActivity extends AppCompatActivity {
                         startActivity(intent);
                         break;
                     case R.id.nav_our_apps:
-                        intent = new Intent(AboutZensarActivity.this, OurAppsActivity.class);
+                        intent = new Intent(AboutZensarActivity.this, OurAppActivity.class);
                         startActivity(intent);
                         break;
                     case R.id.nav_forum:

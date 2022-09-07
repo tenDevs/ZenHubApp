@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingHorizontal="20dp"
-    android:paddingVertical="10dp"
-    android:layout_margin="10dp"
+    android:paddingVertical="20dp"
+    android:layout_marginVertical="5dp"
     android:background="@drawable/grey_rounded_backgroud"
     >
 
@@ -16,6 +16,7 @@
         android:layout_height="wrap_content"
         android:text="Android Developer"
         android:textStyle="bold"
+        android:textColor="@color/black"
         android:layout_marginVertical="5dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Zensar Technologies, "
-        android:textColor="#767676"
+        android:textColor="#3C3C3C"
         android:layout_marginVertical="5dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/internship_title_txt" />
@@ -35,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="JHB"
-        android:textColor="#767676"
+        android:textColor="#3C3C3C"
         app:layout_constraintStart_toEndOf="@+id/internship_company_txt"
         app:layout_constraintTop_toTopOf="@+id/internship_company_txt" />
 
@@ -45,7 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_marginVertical="15dp"
         android:text="2 weeks ago"
-        android:textColor="#767676"
+        android:textColor="#3C3C3C"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/internship_company_txt" />
 

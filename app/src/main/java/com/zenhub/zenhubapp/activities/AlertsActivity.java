@@ -47,7 +47,7 @@ public class AlertsActivity extends AppCompatActivity {
                         startActivity(intent);
                         break;
                     case R.id.nav_our_apps:
-                        intent = new Intent(AlertsActivity.this, OurAppsActivity.class);
+                        intent = new Intent(AlertsActivity.this, OurAppActivity.class);
                         startActivity(intent);
                         break;
                     case R.id.nav_forum:

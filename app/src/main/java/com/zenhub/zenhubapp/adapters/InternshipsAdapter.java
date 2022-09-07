@@ -22,7 +22,7 @@ public class InternshipsAdapter extends RecyclerView.Adapter<InternshipsAdapter.
     List<String> internshipLocationlist;
     List<Timestamp> internshipTimestamplist;
 
-    public InternshipsAdapter(Context context, List<String> internshipTitlelist, List<String> internshipCompanylist, List<String> internshipLocationlist, List<Timestamp> internshipTimestamplist) {
+    public InternshipsAdapter(Context context, List<String> internshipTitlelist, List<String> internshipCompanylist, List<String> internshipLocationlist) {
         this.context = context;
         this.internshipTitlelist = internshipTitlelist;
         this.internshipCompanylist = internshipCompanylist;
@@ -35,7 +35,7 @@ public class InternshipsAdapter extends RecyclerView.Adapter<InternshipsAdapter.
     public InternshipsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.internships_list_item, parent, false);
 
-        return new InternshipsAdapter.InternshipsViewHolder(view);
+        return new InternshipsViewHolder(view);
     }
 
     @Override
@@ -47,7 +47,7 @@ public class InternshipsAdapter extends RecyclerView.Adapter<InternshipsAdapter.
 
     @Override
     public int getItemCount() {
-        return 0;
+        return internshipTitlelist.size();
     }
 
     public static class InternshipsViewHolder extends RecyclerView.ViewHolder{

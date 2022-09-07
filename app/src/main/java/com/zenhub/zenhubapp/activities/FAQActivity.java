@@ -49,7 +49,7 @@ public class FAQActivity extends AppCompatActivity {
                         startActivity(intent);
                         break;
                     case R.id.nav_our_apps:
-                        intent = new Intent(FAQActivity.this, OurAppsActivity.class);
+                        intent = new Intent(FAQActivity.this, OurAppActivity.class);
                         startActivity(intent);
                         break;
                     case R.id.nav_forum:

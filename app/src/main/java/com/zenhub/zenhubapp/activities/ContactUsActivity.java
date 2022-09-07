@@ -48,7 +48,7 @@ public class ContactUsActivity extends AppCompatActivity {
                         startActivity(intent);
                         break;
                     case R.id.nav_our_apps:
-                        intent = new Intent(ContactUsActivity.this, OurAppsActivity.class);
+                        intent = new Intent(ContactUsActivity.this, OurAppActivity.class);
                         startActivity(intent);
                         break;
                     case R.id.nav_forum:

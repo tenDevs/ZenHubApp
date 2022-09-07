@@ -1,6 +1,8 @@
 package com.zenhub.zenhubapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,13 +13,21 @@ import android.widget.ImageView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.zenhub.zenhubapp.R;
-import com.zenhub.zenhubapp.fragments.HomeFragment;
+import com.zenhub.zenhubapp.adapters.InternshipsAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class InternshipaActivity extends AppCompatActivity {
 
     ImageView toolbarUserBtn;
     ImageView toolbarAlertBtn;
     Intent intent;
+
+    List<String> internshipTitle;
+    List<String> internshipCompany;
+    List<String> internshipLocation;
+    RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +41,10 @@ public class InternshipaActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         toolbarUserBtn = findViewById(R.id.toolbar_user);
         toolbarAlertBtn = findViewById(R.id.toolbar_alert);
+
+        internshipTitle = new ArrayList<>();
+        internshipCompany = new ArrayList<>();
+        internshipLocation = new ArrayList<>();
 
         // Replacing the default layout on screen with the Home fragment
 //        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, new HomeFragment()).commit();
@@ -49,7 +63,7 @@ public class InternshipaActivity extends AppCompatActivity {
                         startActivity(intent);
                         break;
                     case R.id.nav_our_apps:
-                        intent = new Intent(InternshipaActivity.this, OurAppsActivity.class);
+                        intent = new Intent(InternshipaActivity.this, OurAppActivity.class);
                         startActivity(intent);
                         break;
                     case R.id.nav_forum:
@@ -77,6 +91,28 @@ public class InternshipaActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        internshipTitle.add("Android Developer");
+        internshipTitle.add("Java Developer");
+        internshipTitle.add("Mainframe developer");
+        internshipTitle.add("Web Developer");
+
+        internshipCompany.add("Zensar Technologies");
+        internshipCompany.add("FNB");
+        internshipCompany.add("Discovery");
+        internshipCompany.add("Deloitte");
+
+        internshipLocation.add("JHB");
+        internshipLocation.add("Cape Town");
+        internshipLocation.add("Durban");
+        internshipLocation.add("JHB");
+
+        recyclerView = findViewById(R.id.internshipsRecycleView);
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        InternshipsAdapter internshipsAdapter = new InternshipsAdapter(InternshipaActivity.this, internshipTitle, internshipCompany, internshipLocation);
+        recyclerView.setAdapter(internshipsAdapter);
+        internshipsAdapter.notifyDataSetChanged();
     }
 
     @Override

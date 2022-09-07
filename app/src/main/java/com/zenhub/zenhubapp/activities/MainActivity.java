@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                         break;
                     case R.id.nav_our_apps:
-                        intent = new Intent(MainActivity.this, OurAppsActivity.class);
+                        intent = new Intent(MainActivity.this, OurAppActivity.class);
                         startActivity(intent);
                         break;
                     case R.id.nav_forum:
@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
         listTitles.add(getString(R.string.about_zensar));
         listTitles.add(getString(R.string.work_shop));
         listTitles.add(getString(R.string.faqs));
-        listTitles.add(getString(R.string.contact_us));
+        listTitles.add("Service Desk");
 
         listIcons.add(R.drawable.ic_baseline_info_24);
         listIcons.add(R.drawable.ic_baseline_store_24);
