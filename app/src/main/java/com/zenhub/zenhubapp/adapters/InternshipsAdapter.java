@@ -1,6 +1,7 @@
 package com.zenhub.zenhubapp.adapters;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -26,18 +27,22 @@ public class InternshipsAdapter extends RecyclerView.Adapter<InternshipsAdapter.
         this.internshipTitlelist = internshipTitlelist;
         this.internshipCompanylist = internshipCompanylist;
         this.internshipLocationlist = internshipLocationlist;
-        this.internshipTimestamplist = internshipTimestamplist;
+//        this.internshipTimestamplist = internshipTimestamplist;
     }
 
     @NonNull
     @Override
     public InternshipsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        View view = LayoutInflater.from(context).inflate(R.layout.internships_list_item, parent, false);
+
+        return new InternshipsAdapter.InternshipsViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull InternshipsViewHolder holder, int position) {
-
+        holder.internshipTitle.setText(internshipTitlelist.get(position));
+        holder.internshipCompany.setText(internshipCompanylist.get(position));
+        holder.internshipLocation.setText(internshipLocationlist.get(position));
     }
 
     @Override
@@ -50,7 +55,7 @@ public class InternshipsAdapter extends RecyclerView.Adapter<InternshipsAdapter.
         TextView internshipTitle;
         TextView internshipCompany;
         TextView internshipLocation;
-        TextView internshipTimestamp;
+//        TextView internshipTimestamp;
 
         public InternshipsViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -58,7 +63,7 @@ public class InternshipsAdapter extends RecyclerView.Adapter<InternshipsAdapter.
             internshipTitle = itemView.findViewById(R.id.internship_title_txt);
             internshipCompany = itemView.findViewById(R.id.internship_company_txt);
             internshipLocation = itemView.findViewById(R.id.internship_location_txt);
-            internshipTimestamp = itemView.findViewById(R.id.internship_timestamp_txt);
+//            internshipTimestamp = itemView.findViewById(R.id.internship_timestamp_txt);
         }
     }
 }
