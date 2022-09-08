@@ -14,15 +14,15 @@
         android:theme="@style/Theme.ZenHubApp"
         tools:targetApi="31">
         <activity
-            android:name=".SignInActivity"
+            android:name=".activities.SignInActivity"
             android:exported="false"
             android:label="@string/title_activity_sign_in"
             android:theme="@style/Theme.ZenHubApp.NoActionBar" />
         <activity
-            android:name=".SignActivity"
+            android:name=".activities.OurAppActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.OurAppActivity"
+            android:name=".activities.SignUpActivity"
             android:exported="false" />
         <activity
             android:name=".activities.AlertsActivity"

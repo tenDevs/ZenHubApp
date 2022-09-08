@@ -65,7 +65,7 @@ public class HomeItemsAdapter extends RecyclerView.Adapter<HomeItemsAdapter.Home
                         context.startActivity(intent);
                         break;
                     case 1:
-                        intent = new Intent(context, FAQActivity.class);
+                        intent = new Intent(context, ForumActivity.class);
                         context.startActivity(intent);
                         break;
                     case 2:

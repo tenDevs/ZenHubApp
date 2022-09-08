@@ -7,9 +7,11 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.zenhub.zenhubapp.R;
 import com.zenhub.zenhubapp.fragments.HomeFragment;
 
@@ -17,6 +19,7 @@ public class ForumActivity extends AppCompatActivity {
 
     ImageView toolbarUserBtn;
     ImageView toolbarAlertBtn;
+    ImageView toolbarMenuBars;
     Intent intent;
 
     @Override
@@ -30,6 +33,7 @@ public class ForumActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         toolbarUserBtn = findViewById(R.id.toolbar_user);
         toolbarAlertBtn = findViewById(R.id.toolbar_alert);
+        toolbarMenuBars = findViewById(R.id.toolbar_bars);
 
         // Replacing the default layout on screen with the Home fragment
 //        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, new HomeFragment()).commit();
@@ -40,7 +44,7 @@ public class ForumActivity extends AppCompatActivity {
 
                 switch (item.getItemId()) {
                     case R.id.nav_home:
-                        intent = new Intent(ForumActivity.this, AboutZensarActivity.class);
+                        intent = new Intent(ForumActivity.this, MainActivity.class);
                         startActivity(intent);
                         break;
                     case R.id.nav_Internships:
@@ -74,6 +78,28 @@ public class ForumActivity extends AppCompatActivity {
                 // got alerts intent
                 Intent intent = new Intent(ForumActivity.this, AlertsActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        toolbarMenuBars.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PopupMenu popupMenu = new PopupMenu(ForumActivity.this, toolbarMenuBars);
+                popupMenu.getMenu().add("Logout");
+                popupMenu.show();
+
+                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem menuItem) {
+                        if (menuItem.getTitle() == "Logout"){
+                            FirebaseAuth.getInstance().signOut();
+                            startActivity(new Intent(ForumActivity.this, SignInActivity.class));
+                            finish();
+                            return true;
+                        }
+                        return false;
+                    }
+                });
             }
         });
     }

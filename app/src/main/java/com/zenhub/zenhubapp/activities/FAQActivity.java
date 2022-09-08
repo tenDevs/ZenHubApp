@@ -1,15 +1,22 @@
 package com.zenhub.zenhubapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Layout;
+import android.transition.AutoTransition;
+import android.transition.TransitionManager;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.zenhub.zenhubapp.R;
 import com.zenhub.zenhubapp.fragments.HomeFragment;
 
@@ -17,6 +24,9 @@ public class FAQActivity extends AppCompatActivity {
 
     ImageView toolbarUserBtn;
     ImageView toolbarAlertBtn;
+    ImageView toolbarMenuBars;
+    TextView cardView;
+    TextView faq_desc;
     Intent intent;
 
     @Override
@@ -31,6 +41,9 @@ public class FAQActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         toolbarUserBtn = findViewById(R.id.toolbar_user);
         toolbarAlertBtn = findViewById(R.id.toolbar_alert);
+        toolbarMenuBars = findViewById(R.id.toolbar_bars);
+        cardView = findViewById(R.id.cardViewer);
+        faq_desc = findViewById(R.id.faq_desc);
 
         // Replacing the default layout on screen with the Home fragment
 //        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, new HomeFragment()).commit();
@@ -41,7 +54,7 @@ public class FAQActivity extends AppCompatActivity {
 
                 switch (item.getItemId()) {
                     case R.id.nav_home:
-                        intent = new Intent(FAQActivity.this, AboutZensarActivity.class);
+                        intent = new Intent(FAQActivity.this, MainActivity.class);
                         startActivity(intent);
                         break;
                     case R.id.nav_Internships:
@@ -75,6 +88,36 @@ public class FAQActivity extends AppCompatActivity {
                 // got alerts intent
                 Intent intent = new Intent(FAQActivity.this, AlertsActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        toolbarMenuBars.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PopupMenu popupMenu = new PopupMenu(FAQActivity.this, toolbarMenuBars);
+                popupMenu.getMenu().add("Logout");
+                popupMenu.show();
+
+                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem menuItem) {
+                        if (menuItem.getTitle() == "Logout"){
+                            FirebaseAuth.getInstance().signOut();
+                            startActivity(new Intent(FAQActivity.this, SignInActivity.class));
+                            finish();
+                            return true;
+                        }
+                        return false;
+                    }
+                });
+            }
+        });
+
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int v = (faq_desc.getVisibility() == View.GONE) ? View.VISIBLE : View.GONE;
+                faq_desc.setVisibility(v);
             }
         });
     }

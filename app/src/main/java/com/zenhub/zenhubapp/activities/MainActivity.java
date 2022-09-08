@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.zenhub.zenhubapp.R;
 import com.zenhub.zenhubapp.adapters.HomeItemsAdapter;
 import com.zenhub.zenhubapp.fragments.ForumFragment;
@@ -30,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     ImageView toolbarUserBtn;
     ImageView toolbarAlertBtn;
+    ImageView toolbarMenuBars;
     Intent intent;
 
     @Override
@@ -43,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         listIcons = new ArrayList<>();
         toolbarUserBtn = findViewById(R.id.toolbar_user);
         toolbarAlertBtn = findViewById(R.id.toolbar_alert);
+        toolbarMenuBars = findViewById(R.id.toolbar_bars);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
@@ -52,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
                 switch (item.getItemId()) {
                     case R.id.nav_home:
-                        intent = new Intent(MainActivity.this, AboutZensarActivity.class);
+                        intent = new Intent(MainActivity.this, MainActivity.class);
                         startActivity(intent);
                         break;
                     case R.id.nav_Internships:
@@ -86,6 +90,28 @@ public class MainActivity extends AppCompatActivity {
                 // got alerts intent
                 Intent intent = new Intent(MainActivity.this, AlertsActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        toolbarMenuBars.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PopupMenu popupMenu = new PopupMenu(MainActivity.this, toolbarMenuBars);
+                popupMenu.getMenu().add("Logout");
+                popupMenu.show();
+
+                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem menuItem) {
+                        if (menuItem.getTitle() == "Logout"){
+                            FirebaseAuth.getInstance().signOut();
+                            startActivity(new Intent(MainActivity.this, SignInActivity.class));
+                            finish();
+                            return true;
+                        }
+                        return false;
+                    }
+                });
             }
         });
 

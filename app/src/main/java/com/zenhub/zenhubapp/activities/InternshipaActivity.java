@@ -9,9 +9,11 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.zenhub.zenhubapp.R;
 import com.zenhub.zenhubapp.adapters.InternshipsAdapter;
 
@@ -22,6 +24,7 @@ public class InternshipaActivity extends AppCompatActivity {
 
     ImageView toolbarUserBtn;
     ImageView toolbarAlertBtn;
+    ImageView toolbarMenuBars;
     Intent intent;
 
     List<String> internshipTitle;
@@ -41,6 +44,7 @@ public class InternshipaActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         toolbarUserBtn = findViewById(R.id.toolbar_user);
         toolbarAlertBtn = findViewById(R.id.toolbar_alert);
+        toolbarMenuBars = findViewById(R.id.toolbar_bars);
 
         internshipTitle = new ArrayList<>();
         internshipCompany = new ArrayList<>();
@@ -89,6 +93,28 @@ public class InternshipaActivity extends AppCompatActivity {
                 // got alerts intent
                 Intent intent = new Intent(InternshipaActivity.this, AlertsActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        toolbarMenuBars.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PopupMenu popupMenu = new PopupMenu(InternshipaActivity.this, toolbarMenuBars);
+                popupMenu.getMenu().add("Logout");
+                popupMenu.show();
+
+                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem menuItem) {
+                        if (menuItem.getTitle() == "Logout"){
+                            FirebaseAuth.getInstance().signOut();
+                            startActivity(new Intent(InternshipaActivity.this, SignInActivity.class));
+                            finish();
+                            return true;
+                        }
+                        return false;
+                    }
+                });
             }
         });
 
