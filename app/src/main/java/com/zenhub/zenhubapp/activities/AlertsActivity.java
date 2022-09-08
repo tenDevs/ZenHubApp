@@ -30,8 +30,6 @@ public class AlertsActivity extends AppCompatActivity {
         toolbarUserBtn = findViewById(R.id.toolbar_user);
         toolbarAlertBtn = findViewById(R.id.toolbar_alert);
 
-        // Replacing the default layout on screen with the Home fragment
-//        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, new HomeFragment()).commit();
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
@@ -64,6 +62,14 @@ public class AlertsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // got alerts intent
                 Intent intent = new Intent(AlertsActivity.this, AlertsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        toolbarUserBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AlertsActivity.this, ProfileActivity.class);
                 startActivity(intent);
             }
         });

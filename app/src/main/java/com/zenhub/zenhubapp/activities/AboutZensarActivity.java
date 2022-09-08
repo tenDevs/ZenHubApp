@@ -24,9 +24,7 @@ public class AboutZensarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_zensar);
 
-
         /* Modified by Lunghile on 19 August 2022 */
-
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         toolbarUserBtn = findViewById(R.id.toolbar_user);
@@ -75,6 +73,8 @@ public class AboutZensarActivity extends AppCompatActivity {
                 // got alerts intent
                 Intent intent = new Intent(AboutZensarActivity.this, AlertsActivity.class);
                 startActivity(intent);
+
+
             }
         });
     }

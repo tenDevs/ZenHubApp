@@ -13,4 +13,13 @@
         <item name="android:statusBarColor" tools:targetApi="l">@color/primary_blue</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Theme.ZenHubApp.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.ZenHubApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.ZenHubApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

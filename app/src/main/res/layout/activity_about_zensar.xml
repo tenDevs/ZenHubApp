@@ -9,17 +9,113 @@
 
     <include
         android:id="@+id/include"
-        layout="@layout/toolbar" />
+        layout="@layout/toolbar"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="381dp" />
 
-    <TextView
-        android:id="@+id/textView2"
+    <ScrollView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="About Zensar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/include">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="20dp">
+
+            <TextView
+                android:id="@+id/about_zensar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/about_zensar"
+                android:textColor="@color/black"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/zensar_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/zensar_desc"
+                android:layout_below="@+id/about_zensar_title"
+                android:paddingVertical="10dp"
+                android:textColor="#3C3C3C"
+                android:lineHeight="25dp"
+                android:textSize="15dp"
+                android:justificationMode="inter_word"/>
+
+            <LinearLayout
+                android:id="@+id/values_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/zensar_desc"
+                android:padding="15dp"
+                android:layout_marginVertical="20dp"
+                android:backgroundTint="@color/primary_blue"
+                android:background="@drawable/grey_rounded_backgroud"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:layout_marginVertical="10dp"
+                    android:textSize="20dp"
+                    android:text="Our Values"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/zensar_values"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/zensar_values"
+                    android:textColor="@color/white"
+                    android:lineHeight="20dp"
+                    android:textSize="15dp"
+                    android:justificationMode="inter_word"
+                    android:layout_marginVertical="10dp"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/values_layout"
+                android:background="@drawable/grey_rounded_backgroud"
+                android:backgroundTint="@color/primary_blue"
+                android:textColor="@color/white"
+                android:padding="15dp"
+                android:text="We put people first through our award-winning EVP" />
+
+            <TextView
+                android:id="@+id/txt2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt1"
+                android:background="@drawable/grey_rounded_backgroud"
+                android:backgroundTint="@color/primary_blue"
+                android:textColor="@color/white"
+                android:layout_marginVertical="20dp"
+                android:padding="15dp"
+                android:text="We help our clients embrace the unexpected" />
+
+            <TextView
+                android:id="@+id/txt3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt2"
+                android:background="@drawable/grey_rounded_backgroud"
+                android:backgroundTint="@color/primary_blue"
+                android:textColor="@color/white"
+                android:padding="15dp"
+                android:text="We collaborate and partner to solve together" />
+
+        </RelativeLayout>
+    </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"

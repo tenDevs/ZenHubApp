@@ -18,6 +18,7 @@ import com.zenhub.zenhubapp.R;
 import com.zenhub.zenhubapp.activities.AboutZensarActivity;
 import com.zenhub.zenhubapp.activities.ContactUsActivity;
 import com.zenhub.zenhubapp.activities.FAQActivity;
+import com.zenhub.zenhubapp.activities.ForumActivity;
 import com.zenhub.zenhubapp.activities.MainActivity;
 import com.zenhub.zenhubapp.activities.ProfileActivity;
 import com.zenhub.zenhubapp.fragments.AboutZensarFragment;
@@ -68,7 +69,7 @@ public class HomeItemsAdapter extends RecyclerView.Adapter<HomeItemsAdapter.Home
                         context.startActivity(intent);
                         break;
                     case 2:
-                        intent = new Intent(context, ContactUsActivity.class);
+                        intent = new Intent(context, ForumActivity.class);
                         context.startActivity(intent);
                         break;
                     case 3:
@@ -76,11 +77,6 @@ public class HomeItemsAdapter extends RecyclerView.Adapter<HomeItemsAdapter.Home
                         context.startActivity(intent);
                         break;
                 }
-
-//                if(holder.getAdapterPosition() == 0){
-//                    Intent intent = new Intent(context, AboutZensarActivity.class);
-//                    context.startActivity(intent);
-//                }
             }
         });
     }

@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "117230149340",
+    "firebase_url": "https://zenhub-fb-default-rtdb.firebaseio.com",
+    "project_id": "zenhub-fb",
+    "storage_bucket": "zenhub-fb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:117230149340:android:ae1e207af259731d4a1e19",
+        "android_client_info": {
+          "package_name": "com.example.login"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "117230149340-ucje43g349rsr2h3kv4h6en64uo2h2f6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2kDn5NRIgyQhkpo2p31EdU7WIfyECm4A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "117230149340-ucje43g349rsr2h3kv4h6en64uo2h2f6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:117230149340:android:e6445c74777366d74a1e19",
+        "android_client_info": {
+          "package_name": "com.zenhub.zenhubapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "117230149340-ucje43g349rsr2h3kv4h6en64uo2h2f6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2kDn5NRIgyQhkpo2p31EdU7WIfyECm4A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "117230149340-ucje43g349rsr2h3kv4h6en64uo2h2f6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

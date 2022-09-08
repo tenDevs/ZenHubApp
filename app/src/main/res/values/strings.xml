@@ -19,9 +19,24 @@
     <string name="internship_title"></string>
     <string name="internship_location"></string>
     <string name="internship_time_posted"></string>
-    <string name="zensar_desc"></string>
+    <string name="zensar_desc">
+        Zensar is a technology consulting and services company with 10,000 associates in 33 global locations. More than 130 leading enterprises depend on our expertise to be more disruptive, agile, and competitive. We focus on conceptualizing, designing, engineering, marketing and managing digital products and experiences for high-growth companies looking to disrupt through innovation and velocity. Our expertise addresses the growth needs of enterprises in dynamic industries such as Hi-tech, Manufacturing, Banking and Financial Services, Insurance, Consumer Services, Public Services and Healthcare.
+    </string>
+    <string name="zensar_mission">
+        At Zensar, we exist for a singular purpose: making sure our clients thrive in a world of constant change. our teams join together every day to make smart connections that embrace the diverse and unexpected, unlocking new ideas that lead to fresh directions through impactful solutions.
+    </string>
+    <string name="zensar_values">
+        We believe technology exists to serve our evolving human needs, so we put people at the heart of everything we do. Always going above and beyond to deliver dependable technology and solutions, we ensure our clients are equipped to take on the challenges of today and tomorrow.
+    </string>
     <string name="post_user_title"></string>
     <string name="forum_post"></string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_sign_in">SignInActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>
