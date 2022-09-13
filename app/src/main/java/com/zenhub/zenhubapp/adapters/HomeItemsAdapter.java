@@ -21,6 +21,7 @@ import com.zenhub.zenhubapp.activities.FAQActivity;
 import com.zenhub.zenhubapp.activities.ForumActivity;
 import com.zenhub.zenhubapp.activities.MainActivity;
 import com.zenhub.zenhubapp.activities.ProfileActivity;
+import com.zenhub.zenhubapp.activities.WorkShopActivity;
 import com.zenhub.zenhubapp.fragments.AboutZensarFragment;
 import com.zenhub.zenhubapp.fragments.HomeFragment;
 
@@ -56,16 +57,16 @@ public class HomeItemsAdapter extends RecyclerView.Adapter<HomeItemsAdapter.Home
             @Override
             public void onClick(View view) {
 
-                int itemPosistion = holder.getAdapterPosition();
+                int itemPosition = holder.getAdapterPosition();
                 Intent intent;
 
-                switch(itemPosistion){
+                switch(itemPosition){
                     case 0:
                         intent = new Intent(context, AboutZensarActivity.class);
                         context.startActivity(intent);
                         break;
                     case 1:
-                        intent = new Intent(context, ForumActivity.class);
+                        intent = new Intent(context, WorkShopActivity.class);
                         context.startActivity(intent);
                         break;
                     case 2:
