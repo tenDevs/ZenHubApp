@@ -2,24 +2,32 @@ package com.zenhub.zenhubapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.zenhub.zenhubapp.R;
-import com.zenhub.zenhubapp.fragments.HomeFragment;
 
 public class ForumActivity extends AppCompatActivity {
 
+    private static final String TAG = "Forum Activity -------- ";
     ImageView toolbarUserBtn;
     ImageView toolbarAlertBtn;
     ImageView toolbarMenuBars;
+    View faqLayout;
+    ImageButton faqBtn;
+    TextView faqDesc;
+    boolean isVisible;
     Intent intent;
 
     @Override
@@ -29,14 +37,16 @@ public class ForumActivity extends AppCompatActivity {
 
         /* Modified by Lunghile on 19 August 2022 */
 
-
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         toolbarUserBtn = findViewById(R.id.toolbar_user);
         toolbarAlertBtn = findViewById(R.id.toolbar_alert);
         toolbarMenuBars = findViewById(R.id.toolbar_bars);
 
-        // Replacing the default layout on screen with the Home fragment
-//        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, new HomeFragment()).commit();
+        faqLayout = findViewById(R.id.faq_layout);
+        faqBtn = findViewById(R.id.faq_layout_btn);
+        faqDesc = findViewById(R.id.faq_desc);
+
+        isVisible = false;
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
@@ -101,6 +111,23 @@ public class ForumActivity extends AppCompatActivity {
                     }
                 });
             }
+        });
+
+        faqLayout.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("LongLogTag")
+            @Override
+            public void onClick(View view) {
+                Log.d(TAG, "you clicked the constarit layout");
+
+                if (faqDesc.getVisibility() == View.GONE) {
+                    faqDesc.setVisibility(View.VISIBLE);
+                    faqBtn.setImageResource(R.drawable.ic_baseline_keyboard_arrow_up_24);
+                } else if(faqDesc.getVisibility() == View.VISIBLE){
+                    faqDesc.setVisibility(View.GONE);
+                    faqBtn.setImageResource(R.drawable.ic_baseline_keyboard_arrow_down_24);
+                }
+            }
+
         });
     }
 

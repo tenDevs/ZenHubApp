@@ -20,8 +20,6 @@ public class WorkShopActivity extends AppCompatActivity {
     ImageView toolbarUserBtn;
     ImageView toolbarAlertBtn;
     ImageView toolbarMenuBars;
-    TextView cardView;
-    TextView faq_desc;
     Intent intent;
 
     @Override
@@ -31,13 +29,10 @@ public class WorkShopActivity extends AppCompatActivity {
 
         /* Modified by Lunghile on 19 August 2022 */
 
-
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         toolbarUserBtn = findViewById(R.id.toolbar_user);
         toolbarAlertBtn = findViewById(R.id.toolbar_alert);
         toolbarMenuBars = findViewById(R.id.toolbar_bars);
-        cardView = findViewById(R.id.cardViewer);
-        faq_desc = findViewById(R.id.faq_desc);
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
@@ -101,14 +96,6 @@ public class WorkShopActivity extends AppCompatActivity {
                         return false;
                     }
                 });
-            }
-        });
-
-        cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int v = (faq_desc.getVisibility() == View.GONE) ? View.VISIBLE : View.GONE;
-                faq_desc.setVisibility(v);
             }
         });
     }
